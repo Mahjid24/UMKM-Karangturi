@@ -971,7 +971,6 @@
             <img src="imageapp/logokkn.png" width="120" height="120">
         </div>
         <div class="loading-text">KATALOG UMKM KARANGTURI</div>
-        <div class="loading-spinner"></div>
         <div class="loading-subtitle">Memuat data UMKM lokal...</div>
     </div>
 
@@ -1036,36 +1035,68 @@
     <script>
         const umkmData = [
             {
-                id: 1, nama: "Warung Bu Sari", kategori: "kuliner",
-                deskripsi: "Warung nasi gudeg dan soto ayam khas Yogya dengan cita rasa autentik",
-                alamat: "Jl. Karangturi Utara No. 15", telepon: "0812-3456-7890",
-                jam: "06:00 - 22:00", harga: "Rp 8.000 - 15.000",
+                id: 1, nama: "Toko Roti Mertojoyo", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "Jl. Mertojoyo No. 110, Karangturi",
+                jam: "06:30 - 16:30", harga: "Mulai dari Rp 40.000",
                 lat: -6.9902, lng: 110.4340,
-                foto: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=200&fit=crop"
+                foto: "imageapp/IMG_3163.JPG"
             },
             {
-                id: 2, nama: "Konveksi Berkah", kategori: "retail",
-                deskripsi: "Produksi seragam sekolah, kaos custom, dan berbagai kebutuhan retail fashion",
-                alamat: "Jl. Karangturi Selatan No. 28", telepon: "0813-2468-1357",
-                jam: "08:00 - 17:00", harga: "Rp 35.000 - 125.000",
-                lat: -6.9904, lng: 110.4326,
-                foto: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&h=200&fit=crop"
+                id: 2, nama: "Mie Ayam Mbak Sur", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "",
+                jam: "10:00 - 20:00", harga: "Mulai dari Rp 5.000",
+                lat: -6.991447637167994, lng: 110.43285904765098,
+                foto: "imageapp/IMG_3161.JPG"
             },
             {
-                id: 3, nama: "Laundry Express", kategori: "jasa",
-                deskripsi: "Layanan cuci setrika kilat, dry cleaning, dan perawatan pakaian premium",
-                alamat: "Jl. Karangturi Barat No. 8", telepon: "0814-5678-9012",
-                jam: "07:00 - 20:00", harga: "Rp 4.000 - 25.000/kg",
+                id: 3, nama: "Warung Sarisaa", kategori: "retail",
+                deskripsi: "Menyediakan Aneka Makanan, Minuman, Sembako dan Lain-lain",
+                alamat: "",
+                jam: "07:00 - 20:00", harga: " - ",
                 lat: -6.9918, lng: 110.4336,
-                foto: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&h=200&fit=crop"
+                foto: "imageapp/IMG_3160.JPG"
             },
             {
-                id: 4, nama: "Bakso Pak Budi", kategori: "kuliner",
-                deskripsi: "Bakso sapi asli dengan kuah kaldu segar dan aneka pelengkap",
-                alamat: "Jl. Karangturi Tengah No. 23", telepon: "0816-1234-5678",
-                jam: "10:00 - 21:00", harga: "Rp 12.000 - 18.000",
-                lat: -6.9935, lng: 110.4328,
-                foto: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&h=200&fit=crop"
+                id: 4, nama: "Mie Ayam Mbak Ika", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "",
+                jam: "11:00 - 21:00", harga: "Mulai dari Rp 10.000",
+                lat: -6.990314712221169, lng: 110.43263419913407,
+                foto: "imageapp/IMG_3155.JPG"
+            },
+             {
+                id: 5, nama: "Nasi Rames Bu Wiwi", kategori: "kuliner",
+                deskripsi: "Menyajikan beragam lauk pauk khas Indonesia yang diolah secara higienis dan penuh cita rasa rumahan. ",
+                alamat: "",
+                jam: "07:00 - 15:00", harga: "Mulai dari Rp 6000",
+                lat: -6.989805776169069, lng: 110.43299019671517,
+                foto: "imageapp/IMG_3148.jpg"
+            },
+             {
+                id: 6, nama: "Kue Semarang KS Eggroll", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "",
+                jam: "-", harga: "Rp 25000",
+                lat: -6.9904635913656685, lng: 110.43259328066858,
+                foto: "imageapp/eggroll.JPG"
+            },
+            {
+                id: 7, nama: "Milk Tea Family Coffe", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "",
+                jam: "08:30 - 21.00", harga: "Mulai dari Rp 3000",
+                lat: -6.989227965967071, lng: 110.43305643535166,
+                foto: "imageapp/IMG_3204.JPG"
+            },
+            {
+                id: 8, nama: "D'Celup Chiken Crispy", kategori: "kuliner",
+                deskripsi: "",
+                alamat: "",
+                jam: "08:30 - 21.00", harga: "Mulai dari Rp 3000",
+                lat: -6.989227965967071, lng: 110.43305643535166,
+                foto: "imageapp/dcelup.jpeg"
             }
         ];
 
@@ -1093,15 +1124,53 @@
                 keyboard: true,
                 tap: true,
                 tapTolerance: 20,
-                zoomSnap: 0.5,
+                zoomSnap: 0.25, // Zoom lebih halus
                 zoomDelta: 0.5,
                 wheelPxPerZoomLevel: 60,
-                maxZoom: 19
+                maxZoom: 20, // Zoom maksimal lebih tinggi
+                minZoom: 10, // Zoom minimal untuk performa
+                preferCanvas: true // Gunakan canvas untuk performa lebih baik
             }).setView([-6.9890, 110.4225], 16);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+            // Primary tile layer - OpenStreetMap
+            const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19,
+                subdomains: ['a', 'b', 'c']
+            });
+
+            // Backup tile layer - OpenStreetMap HOT untuk detail tinggi
+            const hotLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team',
+                maxZoom: 20,
+                subdomains: ['a', 'b', 'c']
+            });
+
+            // Satellite imagery backup
+            const esriLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles © Esri',
+                maxZoom: 19
+            });
+
+            // Add primary layer
+            osmLayer.addTo(map);
+
+            // Fallback mechanism for failed tiles
+            osmLayer.on('tileerror', function(error) {
+                console.log('OSM tile failed, trying backup');
+                if (!map.hasLayer(hotLayer)) {
+                    map.removeLayer(osmLayer);
+                    hotLayer.addTo(map);
+                }
+            });
+
+            hotLayer.on('tileerror', function(error) {
+                console.log('HOT tile failed, trying satellite');
+                if (!map.hasLayer(esriLayer)) {
+                    map.removeLayer(hotLayer);
+                    esriLayer.addTo(map);
+                }
+            });
 
             // Mobile-specific optimizations
             if (L.Browser.mobile) {
@@ -1178,13 +1247,13 @@
                 dashArray: '5, 10'
             }).addTo(map);
 
-            // Get initial user location
+            // Get initial user location with higher accuracy
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
                         userLocation = [position.coords.latitude, position.coords.longitude];
                         locationAccuracy = position.coords.accuracy;
-                        map.setView(userLocation, 16);
+                        map.setView(userLocation, 18); // Zoom lebih dekat untuk akurasi
                         updateUserLocationOnMap();
                         setTimeout(() => {
                             if (userMarker) {
@@ -1201,8 +1270,8 @@
                     },
                     {
                         enableHighAccuracy: true,
-                        timeout: 10000,
-                        maximumAge: 60000
+                        timeout: 15000, // Timeout lebih lama untuk akurasi
+                        maximumAge: 30000 // Cache lebih sedikit untuk data fresh
                     }
                 );
             } else {
@@ -1740,11 +1809,11 @@
 
         function startLocationTracking() {
             if (navigator.geolocation) {
-                // High accuracy tracking for mobile GPS-like behavior
+                // High accuracy tracking with improved settings
                 const options = {
                     enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 5000
+                    timeout: 20000, // Lebih lama untuk akurasi tinggi
+                    maximumAge: 2000 // Data lokasi lebih fresh
                 };
 
                 watchId = navigator.geolocation.watchPosition(
@@ -1752,12 +1821,16 @@
                         const newLocation = [position.coords.latitude, position.coords.longitude];
                         locationAccuracy = position.coords.accuracy;
                         
-                        // Update user location if there's significant change
+                        // Update dengan threshold yang lebih kecil untuk akurasi
                         if (userLocation) {
                             const distance = calculateDistance(userLocation, newLocation);
-                            if (distance > 10) { // Only update if moved more than 10 meters
+                            // Update jika bergerak lebih dari 3 meter atau akurasi membaik
+                            if (distance > 3 || (locationAccuracy && locationAccuracy < 20)) {
                                 userLocation = newLocation;
                                 updateUserLocationOnMap();
+                                
+                                // Log untuk debugging
+                                console.log(`Location updated: ${userLocation}, Accuracy: ${locationAccuracy}m`);
                             }
                         } else {
                             userLocation = newLocation;
@@ -1765,7 +1838,26 @@
                         }
                     },
                     (error) => {
-                        console.log("Location tracking error:", error);
+                        console.log("Location tracking error:", error.message);
+                        // Fallback ke metode yang kurang akurat jika high accuracy gagal
+                        if (error.code === error.TIMEOUT) {
+                            // Coba lagi dengan setting yang lebih longgar
+                            const fallbackOptions = {
+                                enableHighAccuracy: false,
+                                timeout: 10000,
+                                maximumAge: 10000
+                            };
+                            
+                            navigator.geolocation.getCurrentPosition(
+                                (position) => {
+                                    userLocation = [position.coords.latitude, position.coords.longitude];
+                                    locationAccuracy = position.coords.accuracy;
+                                    updateUserLocationOnMap();
+                                },
+                                () => console.log("Fallback location also failed"),
+                                fallbackOptions
+                            );
+                        }
                     },
                     options
                 );
@@ -1799,28 +1891,63 @@
                 map.removeLayer(userMarker);
             }
 
-            // Create pulsing user marker like GPS apps
+            // Remove existing accuracy circle if present
+            map.eachLayer(function(layer) {
+                if (layer._isAccuracyCircle) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            // Create accuracy circle for better visualization
             const accuracyRadius = locationAccuracy || 50;
+            if (accuracyRadius < 500) { // Only show circle if accuracy is reasonable
+                const accuracyCircle = L.circle(userLocation, {
+                    radius: accuracyRadius,
+                    color: '#1e40af',
+                    fillColor: '#1e40af',
+                    fillOpacity: 0.1,
+                    weight: 1,
+                    opacity: 0.3
+                }).addTo(map);
+                accuracyCircle._isAccuracyCircle = true;
+            }
+
+            // Create enhanced user marker
             const userIcon = L.divIcon({
                 html: `
                     <div style="position: relative;">
-                        <div style="width: ${Math.min(accuracyRadius/2, 100)}px; height: ${Math.min(accuracyRadius/2, 100)}px; 
-                                   border-radius: 50%; background: rgba(30,144,255,0.1); 
+                        <div style="width: 30px; height: 30px; 
+                                   border-radius: 50%; background: rgba(30,144,255,0.2); 
                                    position: absolute; top: 50%; left: 50%; 
                                    transform: translate(-50%, -50%); 
                                    animation: pulse 2s infinite;"></div>
-                        <div style="width: 16px; height: 16px; border-radius: 50%; 
-                                   background: #1e40af; border: 2px solid white; 
-                                   box-shadow: 0 2px 8px rgba(30,64,175,0.5); 
+                        <div style="width: 20px; height: 20px; border-radius: 50%; 
+                                   background: #1e40af; border: 3px solid white; 
+                                   box-shadow: 0 3px 12px rgba(30,64,175,0.6); 
                                    position: relative; z-index: 10;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; 
+                                   background: white; position: absolute; 
+                                   top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                   z-index: 11;"></div>
                     </div>
                 `,
-                className: 'user-marker-gps',
-                iconSize: [16, 16]
+                className: 'user-marker-gps-enhanced',
+                iconSize: [20, 20]
             });
 
+            const accuracyText = accuracyRadius < 10 ? 'Sangat Akurat' : 
+                                accuracyRadius < 20 ? 'Akurat' : 
+                                accuracyRadius < 50 ? 'Cukup Akurat' : 'Kurang Akurat';
+
             userMarker = L.marker(userLocation, {icon: userIcon}).addTo(map)
-                .bindPopup('<div style="text-align: center;"><strong>📍 Lokasi Anda</strong><br><small>Akurasi: ~' + Math.round(locationAccuracy) + 'm</small></div>');
+                .bindPopup(`
+                    <div style="text-align: center;">
+                        <strong>📍 Lokasi Anda</strong><br>
+                        <small>Akurasi: ~${Math.round(accuracyRadius)}m (${accuracyText})</small><br>
+                        <small style="color: #666;">Lat: ${userLocation[0].toFixed(6)}<br>
+                        Lng: ${userLocation[1].toFixed(6)}</small>
+                    </div>
+                `);
         }
 
         // Mobile optimizations
